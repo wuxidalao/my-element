@@ -2,7 +2,7 @@
   <div>
     <el-container>
       <el-header class="topContainer">
-        <div class="topLogo"><img src="../assets/logo.png" /></div>
+        <div class="topLogo"><img src="../images/logo.png" /></div>
         <div class="topNav"><top></top></div>
       </el-header>
       <el-container :style="height">
@@ -61,8 +61,9 @@ export default {
 }
 
 .topLogo>img{
-  width: 100px;
-  height: 60px;
+  width: 120px;
+  height: 50px;
+  margin-top:5px;
 }
 
 .leftContainer{

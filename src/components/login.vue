@@ -1,5 +1,5 @@
 <template>
-  <div class="login-container">
+  <div class="login-container" :style="height">
     <el-form
       :model="ruleForm2"
       :rules="rules2"
@@ -8,7 +8,8 @@
       label-position="left"
       label-width="0px"
       class="demo-ruleForm login-page">
-      <h3 class="title">系统登录</h3>
+      <img class="logo" src="../images/logo.png" alt="">
+      <h3 class="title">信息系统</h3>
       <el-form-item prop="username">
         <el-input type="text" v-model="ruleForm2.username" auto-complete="off" prefix-icon="el-icon-user" placeholder="用户名"></el-input>
       </el-form-item>
@@ -44,8 +45,14 @@ export default {
           { required: true, message: 'enter your password', trigger: 'blur' }
         ]
       },
-      checked: false
+      checked: false,
+      height: {
+        height: ''
+      }
     }
+  },
+  created () {
+    this.hh()
   },
   methods: {
     handleSubmit (event) {
@@ -70,12 +77,19 @@ export default {
           return false
         }
       })
+    },
+    hh () {
+      this.height.height = window.innerHeight + 'px'
     }
   }
 }
 </script>
 
 <style scoped>
+.logo{
+  width: 120px;
+  height: 50px;
+}
 
 .title{
   text-align: center;
@@ -84,20 +98,28 @@ export default {
 .login-container {
   width: 100%;
   height: 100%;
-  background: #ccc;
+  /* background-color: rgb(84, 92, 100); */
+  background: url(../images/loginBj.jpeg) no-repeat center center;
+  background-size:100% 100%;
+  position: relative; 
 }
 .login-page {
   -webkit-border-radius: 5px;
   border-radius: 5px;
-  margin: 180px auto;
   width: 350px;
   padding: 35px 35px 15px;
-  background: #fff;
+  background-color: rgba(84, 92, 100 ,0.2);
   border: 1px solid #eaeaea;
-  box-shadow: 0 0 25px #cac6c6;
+  box-shadow: 0 0 20px #eaeaea;
+  margin: 0 auto;
+  position: absolute; 
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
 }
 label.el-checkbox.rememberme {
   margin: 0px 0px 15px;
   text-align: left;
+  color:black;
 }
 </style>
