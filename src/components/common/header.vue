@@ -6,7 +6,8 @@
           <div class="topLogo"><img src="../../images/logo.png" /></div>
         </div>
       </el-col>
-      <el-col :span="18" align="right"><div class="grid-content bg-purple-light">
+      <el-col :span="18" align="right">
+        <div class="grid-content bg-purple-light">
           <el-dropdown>
             <el-button type="primary">
               设置<i class="el-icon-arrow-down el-icon--right"></i>
@@ -19,7 +20,8 @@
               <el-dropdown-item>蚵仔煎</el-dropdown-item>
             </el-dropdown-menu>
           </el-dropdown>
-        </div></el-col>
+        </div>
+      </el-col>
     </el-row>
 
   </div>
