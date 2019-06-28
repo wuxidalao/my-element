@@ -1,24 +1,24 @@
 <template>
   <div>
-    <!-- <div class="topLogo"><img src="../../images/logo.png" /></div> -->
-    <div class="submenu">
-      <el-menu
-      :default-active="activeIndex1"
-      class="el-menu-demo"
-      mode="horizontal"
-      @select="handleSelect"
-      background-color="rgba（0,0,0,0）"
-      text-color="#000"
-      active-text-color="#ffd04b">
-      <el-submenu index="1">
-        <template slot="title">我的工作台</template>
-        <el-menu-item index="1-1">选项1</el-menu-item>
-        <el-menu-item index="1-2">选项2</el-menu-item>
-        <el-menu-item index="1-3">选项3</el-menu-item>
-      </el-submenu>
-    </el-menu>
-    </div>
+    <el-row>
+      <el-col :span="6"><div class="grid-content bg-purple">1</div></el-col>
+      <el-col :span="18" align="right"><div class="grid-content bg-purple-light">
+          <el-dropdown>
+            <el-button type="primary">
+              设置<i class="el-icon-arrow-down el-icon--right"></i>
+            </el-button>
+            <el-dropdown-menu slot="dropdown">
+              <el-dropdown-item>黄金糕</el-dropdown-item>
+              <el-dropdown-item>狮子头</el-dropdown-item>
+              <el-dropdown-item>螺蛳粉</el-dropdown-item>
+              <el-dropdown-item>双皮奶</el-dropdown-item>
+              <el-dropdown-item>蚵仔煎</el-dropdown-item>
+            </el-dropdown-menu>
+          </el-dropdown>
+        </div></el-col>
+    </el-row>
 
+    <!-- <div class="topLogo"><img src="../../images/logo.png" /></div> -->
     <!-- <el-avatar :size="50" :src="circleUrl"></el-avatar> -->
   </div>
 </template>
@@ -41,9 +41,6 @@ export default {
 </script>
 
 <style scoped>
-.submenu{
-  width: 100px;
-}
 
 .topLogo>img{
   width: 120px;
