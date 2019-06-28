@@ -1,7 +1,11 @@
 <template>
   <div>
     <el-row>
-      <el-col :span="6"><div class="grid-content bg-purple">1</div></el-col>
+      <el-col :span="6">
+        <div class="grid-content bg-purple">
+          <div class="topLogo"><img src="../../images/logo.png" /></div>
+        </div>
+      </el-col>
       <el-col :span="18" align="right"><div class="grid-content bg-purple-light">
           <el-dropdown>
             <el-button type="primary">
@@ -18,8 +22,6 @@
         </div></el-col>
     </el-row>
 
-    <!-- <div class="topLogo"><img src="../../images/logo.png" /></div> -->
-    <!-- <el-avatar :size="50" :src="circleUrl"></el-avatar> -->
   </div>
 </template>
 
