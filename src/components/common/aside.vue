@@ -1,5 +1,6 @@
 <template>
-  <el-menu
+  <div>
+    <el-menu
       default-active="2"
       class="el-menu-vertical-demo"
       @open="handleOpen"
@@ -37,12 +38,12 @@
         <span slot="title">导航四</span>
       </el-menu-item>
     </el-menu>
+  </div>
 </template>
 
 <script>
 
 </script>
 
-<style>
-
+<style scoped>
 </style>
