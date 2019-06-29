@@ -36,7 +36,7 @@ export default {
 
 .el-aside {
   background-color: #354155;
-  max-height:100vh;
+  min-height:100vh;
 }
 
 .el-main {

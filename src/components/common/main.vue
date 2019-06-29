@@ -1,6 +1,9 @@
 <template>
   <div>
-    <div class="v-cdrdHeader">111
+    <div class="v-cdrdHeader">
+      <el-tag closable="true" disable-transitions="true">默认标签</el-tag>
+      <el-tag closable>默认标签</el-tag>
+      <el-tag closable>默认标签</el-tag>
     </div>
 
     <!-- 面包屑 -->
@@ -48,16 +51,16 @@
 
 <style scoped>
 .v-cdrdHeader{
-  width: 100%;
-  height: 40px;
+  padding: 10px;
   box-shadow: 0 5px 10px #ddd;
 }
 
 .v-container{
   margin:10px;
   padding: 10px;
-  border:solid 1px #cccccc;
+  border:solid 1px #E8E8E8;
   border-radius: 5px;
+  height: 100%;
 }
 
 .v-breadcrumb{
