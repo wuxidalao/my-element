@@ -39,11 +39,18 @@
 </template>
 
 <script>
+const {SwitchNavigationMenu} = require('../../lib/help.js')
 
+export default {
+  data:{
+
+  },
+  methods:{
+    
+  }
+}
 </script>
 
 <style scoped>
-.v-height{
-  height: 500px;
-}
+
 </style>

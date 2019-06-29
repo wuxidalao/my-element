@@ -28,7 +28,7 @@
         </el-tooltip>
       </div>
       <!-- 全屏 -->
-      <div class="v-fullScreen">
+      <div class="v-fullScreen" @click="handleFullScreen">
         <el-tooltip class="item" effect="dark" content="全屏" placement="bottom">
           <i class="el-icon-rank"></i>
         </el-tooltip>
@@ -38,7 +38,20 @@
 </template>
 
 <script>
+const  {handleFullScreen} =require('../../lib/help.js')
 
+export default {
+  data(){
+    return {
+      fullscreen: false
+    }
+  },
+  methods:{
+    handleFullScreen(){
+      handleFullScreen()
+    }
+  }
+}
 </script>
 
 <style scoped>
@@ -67,7 +80,7 @@
 }
 
 .v-logo>img{
-  width: 80px;
+  width: 40px;
   height: 30px;
 }
 
