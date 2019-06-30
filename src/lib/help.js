@@ -1,5 +1,5 @@
 // 全屏事件
-function handleFullScreen() {
+function HandleFullScreen() {
     let element = document.documentElement;
     if (this.fullscreen) {
         if (document.exitFullscreen) {
@@ -28,5 +28,5 @@ function handleFullScreen() {
 
 
 module.exports = {
-    handleFullScreen,
+    HandleFullScreen,
 }

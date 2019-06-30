@@ -16,6 +16,12 @@ import vAside from './aside.vue'
 import vMain from './main.vue'
 
 export default {
+  name:"Home",
+  data(){
+    return{
+      
+    }
+  },
   components: {
     vHeader,
     vAside,

@@ -2,7 +2,7 @@
   <div class="headerContainer">
     <div class="headerLeft">
       <!-- <div class="logo"><img src="../../images/logo.png" /></div> -->
-      <div class="collapse-btn" @click="collapseChage">
+      <div class="collapse-btn">
             <i class="el-icon-menu"></i>
       </div>
       <p class="headerName">管理系统</p>
@@ -11,9 +11,9 @@
       <!-- 设置 -->
       <div class="grid-content bg-purple-light headerSetUp">
         <el-dropdown>
-          <txt type="primary">
+          <div type="primary">
             admin<i class="el-icon-arrow-down el-icon--right"></i>
-          </txt>
+          </div>
           <el-dropdown-menu slot="dropdown">
             <el-dropdown-item>系统首页</el-dropdown-item>
             <el-dropdown-item>个人中心</el-dropdown-item>
@@ -41,9 +41,10 @@
 </template>
 
 <script>
-const  {handleFullScreen} =require('../../lib/help.js')
+const  {HandleFullScreen} =require('../../lib/help.js')
 
 export default {
+  name:"Header",
   data(){
     return {
       fullscreen: false
@@ -51,8 +52,7 @@ export default {
   },
   methods:{
     handleFullScreen(){
-      handleFullScreen()
-     
+      HandleFullScreen()
     }
   }
 }

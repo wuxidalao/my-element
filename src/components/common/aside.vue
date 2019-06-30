@@ -3,8 +3,6 @@
     <el-menu
       default-active="2"
       class="el-menu-vertical-demo"
-      @open="handleOpen"
-      @close="handleClose"
       background-color="#354155"
       text-color="#c1cbd8"
       active-text-color="#4aa0f8">
@@ -72,8 +70,11 @@
 <script>
 
 export default {
-  data:{
+  name:"Aside",
+  data(){
+    return {
 
+    }
   },
   methods:{
     
