@@ -2,8 +2,8 @@
   <div>
     <el-container direction="vertical">
       <el-header><vHeader></vHeader></el-header>
-      <el-container>
-        <el-aside width="201px"><vAside></vAside></el-aside>
+      <el-container class="containerBox">
+        <el-aside width="250px"><vAside></vAside></el-aside>
         <el-main><vMain></vMain></el-main>
       </el-container>
     </el-container>
@@ -25,9 +25,12 @@ export default {
 </script>
 
 <style scoped>
+.containerBox{
+  height: 100%;
+  
+}
 .el-container{
   height:100%;
-  
 }
 
 .el-header {
@@ -35,8 +38,6 @@ export default {
 }
 
 .el-aside {
-  background-color: #354155;
-  min-height:100vh;
 }
 
 .el-main {

@@ -1,12 +1,15 @@
 <template>
-  <div class="v-container">
-    <div class="v-left">
-      <div class="v-logo"><img src="../../images/logo.png" /></div>
-      <p class="v-name">管理系统</p>
+  <div class="headerContainer">
+    <div class="headerLeft">
+      <!-- <div class="logo"><img src="../../images/logo.png" /></div> -->
+      <div class="collapse-btn" @click="collapseChage">
+            <i class="el-icon-menu"></i>
+      </div>
+      <p class="headerName">管理系统</p>
     </div>
-    <div class="v-right">
+    <div class="headerRight">
       <!-- 设置 -->
-      <div class="grid-content bg-purple-light v-setUp">
+      <div class="grid-content bg-purple-light headerSetUp">
         <el-dropdown>
           <txt type="primary">
             admin<i class="el-icon-arrow-down el-icon--right"></i>
@@ -19,17 +22,17 @@
         </el-dropdown>
       </div>
       <!-- 头像 -->
-      <div class="v-HeadPortrait"><img src="../../images/tx.png" /></div>
+      <div class="headPortrait"><img src="../../images/tx.png" /></div>
       <!-- 消息 -->
-      <div class="v-bell">
-        <div class="v-bellTips"></div>
+      <div class="headerBell">
+        <div class="headerBellTips"></div>
         <el-tooltip class="item" effect="dark" content="您有1条未读消息" placement="bottom">
           <i class="el-icon-bell"></i>
         </el-tooltip>
       </div>
       <!-- 全屏 -->
-      <div class="v-fullScreen" @click="handleFullScreen">
-        <el-tooltip class="item" effect="dark" content="全屏" placement="bottom">
+      <div class="headerFullScreen" @click="handleFullScreen">
+        <el-tooltip class="item" effect="dark" :content="fullscreen?`取消全屏`:`全屏`" placement="bottom">
           <i class="el-icon-rank"></i>
         </el-tooltip>
       </div>
@@ -49,59 +52,66 @@ export default {
   methods:{
     handleFullScreen(){
       handleFullScreen()
+     
     }
   }
 }
 </script>
 
 <style scoped>
-.v-container{
+.headerContainer{
   display: flex;
   justify-content: space-between;
   height: 60px;
 }
 
-.v-left{
+.headerLeft{
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
 }
 
-.v-right{
+.headerRight{
   display: flex;
   flex-direction: row-reverse;
   justify-content: flex-end;
   align-items: center;
 }
 
-.v-name{
+.collapse-btn{
+  margin-right: 15px;
+  font-size: 30px;
+  color: lightblue;
+}
+
+.headerName{
   color: #fff;
 }
 
-.v-logo>img{
+.logo>img{
   width: 40px;
   height: 30px;
 }
 
-.v-setUp{
+.headerSetUp{
   margin-left: 10px;
 }
 
-.v-HeadPortrait>img{
+.headPortrait>img{
   width: 40px;
   height: 40px;
   border-radius: 50%;
 }
 
-.v-bell{
+.headerBell{
   color: aliceblue;
   font-size: 24px;
   margin-right: 15px;
   position: relative;
 }
 
-.v-bellTips{
+.headerBellTips{
   display:block;
 	background:#f00;
 	border-radius:50%;
@@ -112,7 +122,7 @@ export default {
 	position:absolute;
 }
 
-.v-fullScreen{
+.headerFullScreen{
   color: aliceblue;
   font-size: 24px;
   margin-right: 10px;

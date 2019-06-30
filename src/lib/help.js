@@ -26,11 +26,7 @@ function handleFullScreen() {
     this.fullscreen = !this.fullscreen;
 }
 
-function SwitchNavigationMenu() {}
-
-
 
 module.exports = {
     handleFullScreen,
-    SwitchNavigationMenu
 }
