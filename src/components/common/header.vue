@@ -32,7 +32,7 @@
       </div>
       <!-- 全屏 -->
       <div class="headerFullScreen" @click="handleFullScreen">
-        <el-tooltip class="item" effect="dark" :content="fullscreen?`取消全屏`:`全屏`" placement="bottom">
+        <el-tooltip class="item" effect="dark" :content="fullscreen?'取消全屏':'全屏'" placement="bottom">
           <i class="el-icon-rank"></i>
         </el-tooltip>
       </div>
@@ -53,6 +53,7 @@ export default {
   methods:{
     handleFullScreen(){
       HandleFullScreen()
+      console.log(fullscreen)
     }
   }
 }
