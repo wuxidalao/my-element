@@ -16,7 +16,7 @@ export default new Router({
       children: [
         {
           path: '/dashboard',
-          component: resolve => require(['../components/page/01.vue'], resolve),
+          component: resolve => require(['../components/page/tips.vue'], resolve),
           meta: { title: '系统首页' }
         }
       ]
