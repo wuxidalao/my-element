@@ -7,17 +7,43 @@ export default new Router({
   routes: [
     {
       path: '/',
-      redirect: '/dashboard'
+      redirect: '/home'
     },
+  
     {
-      path: '/',
+      path: '/home',
       component: resolve => require(['../components/common/home.vue'], resolve),
-      meta: { title: '主页' },
+      meta: { title: '首页' },
       children: [
         {
-          path: '/dashboard',
+          path: '/home',
+          component: resolve => require(['../components/page/index.vue'], resolve),
+          meta: { title: '打开页' }
+        },
+        {
+          path: '/tips',
           component: resolve => require(['../components/page/tips.vue'], resolve),
-          meta: { title: '系统首页' }
+          meta: { title: '消息' }
+        },
+        {
+          path: '/center',
+          component: resolve => require(['../components/page/center.vue'], resolve),
+          meta: { title: '个人中心' }
+        },
+        {
+          path: '/qita/chifan',
+          component: resolve => require(['../components/page/chifan.vue'], resolve),
+          meta: { title: '吃饭' }
+        },
+        {
+          path: '/qita/shuijiao',
+          component: resolve => require(['../components/page/shuijiao.vue'], resolve),
+          meta: { title: '睡觉' }
+        },
+        {
+          path: '/shezhi',
+          component: resolve => require(['../components/page/shezhi.vue'], resolve),
+          meta: { title: '设置' }
         }
       ]
     },

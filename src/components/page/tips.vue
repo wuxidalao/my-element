@@ -69,7 +69,7 @@
 
 <script>
     export default {
-        name: 'tabs',
+        name: 'tips',
         data() {
             return {
                 message: 'first',

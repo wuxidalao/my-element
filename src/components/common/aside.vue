@@ -1,85 +1,90 @@
 <template>
   <div class="asideBar">
     <el-menu
-      default-active="2"
+      :default-active="onRoutes"
       class="el-menu-vertical-demo"
       background-color="#354155"
       text-color="#c1cbd8"
-      active-text-color="#4aa0f8">
-      <el-submenu index="1">
-        <template slot="title">
-          <i class="el-icon-location"></i>
-          <span>导航一</span>
+      active-text-color="#4aa0f8"
+    >
+      <template v-for="item in items">
+        <template v-if="item.subs">
+          <el-submenu :index="item.index" :key="item.index">
+            <template slot="title">
+              <i :class="item.icon"></i>
+              <span slot="title">{{item.title}}</span>
+            </template>
+            <template v-for="subItem in item.subs">
+              <el-submenu v-if="subItem.subs" :index="subItem.index" :key="subItem.index">
+                <template slot="title">{{ subItem.title }}</template>
+                <el-menu-item
+                  v-for="(threeItem,i) in subItem.subs"
+                  :key="i"
+                  :index="threeItem.index"
+                >{{ threeItem.title }}</el-menu-item>
+              </el-submenu>
+              <el-menu-item v-else :index="subItem.index" :key="subItem.index">{{ subItem.title }}</el-menu-item>
+            </template>
+          </el-submenu>
         </template>
-          <el-menu-item index="1-1">选项1</el-menu-item>
-          <el-menu-item index="1-2">选项2</el-menu-item>
-          <el-menu-item index="1-3">选项3</el-menu-item>
-        <el-submenu index="1-4">
-          <template slot="title">选项4</template>
-          <el-menu-item index="1-4-1">选项1-4-1</el-menu-item>
-          <el-menu-item index="1-4-2">选项1-4-2</el-menu-item>
-        </el-submenu>
-      </el-submenu>
-
-      <el-submenu index="2">
-        <template slot="title">
-          <i class="el-icon-location"></i>
-          <span>导航一</span>
+        <template v-else>
+          <el-menu-item :index="item.index" :key="item.index">
+            <i :class="item.icon"></i>
+            <span slot="title">{{item.title}}</span>
+          </el-menu-item>
         </template>
-          <el-menu-item index="2-1">选项1</el-menu-item>
-          <el-menu-item index="2-2">选项2</el-menu-item>
-          <el-menu-item index="2-3">选项3</el-menu-item>
-        <el-submenu index="2-4">
-          <template slot="title">选项4</template>
-          <el-menu-item index="2-4-1">选项1-4-1</el-menu-item>
-          <el-menu-item index="2-4-2">选项1-4-2</el-menu-item>
-        </el-submenu>
-      </el-submenu>
-
-      <el-submenu index="3">
-        <template slot="title">
-          <i class="el-icon-location"></i>
-          <span>导航一</span>
-        </template>
-          <el-menu-item index="3-1">选项1</el-menu-item>
-          <el-menu-item index="3-2">选项2</el-menu-item>
-          <el-menu-item index="3-3">选项3</el-menu-item>
-        <el-submenu index="3-4">
-          <template slot="title">选项4</template>
-          <el-menu-item index="3-4-1">选项1-4-1</el-menu-item>
-          <el-menu-item index="3-4-2">选项1-4-2</el-menu-item>
-        </el-submenu>
-      </el-submenu>
-
-      <el-menu-item index="4">
-        <i class="el-icon-menu"></i>
-        <span slot="title">导航二</span>
-      </el-menu-item>
-      <el-menu-item index="5">
-        <i class="el-icon-document"></i>
-        <span slot="title">导航三</span>
-      </el-menu-item>
-      <el-menu-item index="6">
-        <i class="el-icon-setting"></i>
-        <span slot="title">导航四</span>
-      </el-menu-item>
+      </template>
     </el-menu>
   </div>
 </template>
 
 <script>
+import bus from "../common/bus";
 
 export default {
-  name:"Aside",
-  data(){
+  name: "Aside",
+  data() {
     return {
-
-    }
+      items: [
+        {
+          icon: "el-icon-location",
+          index: "1",
+          title: "首页",
+          subs: [
+            {
+              index: "1-1",
+              title: "消息"
+            },
+            {
+              index: "1-2",
+              title: "个人中心"
+            },
+            {
+              index: "1-3",
+              title: "其他",
+              subs: [
+                {
+                  index: "1-3-1",
+                  title: "吃饭"
+                },
+                {
+                  index: "1-3-2",
+                  title: "睡觉"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          icon: "el-icon-setting",
+          index: "2",
+          title: "设置"
+        }
+      ]
+    };
   },
-  methods:{
-    
-  }
-}
+  methods: {}
+};
 </script>
 
 <style scoped>
@@ -91,5 +96,7 @@ export default {
   overflow-x: hidden;
 }
 
-.asideBar::-webkit-scrollbar {display:none}
+.asideBar::-webkit-scrollbar {
+  display: none;
+}
 </style>
