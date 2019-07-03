@@ -43,7 +43,6 @@
 
 <script>
 const {HandleFullScreen} = require('../../lib/help.js')
-const bus = require('./bus.js')
 
 export default {
   name: 'Header',
@@ -61,7 +60,7 @@ export default {
     // 折叠菜单
     collapseChage () {
       this.collapse = !this.collapse
-      bus.$emit('collapse', this.collapse)
+      this.$bus.emit('collapse', this.collapse)
     }
   },
   mounted () {

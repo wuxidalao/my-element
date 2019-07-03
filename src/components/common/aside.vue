@@ -34,7 +34,6 @@
 </template>
 
 <script>
-import bus from '../common/bus'
 
 export default {
   name: 'Aside',
@@ -85,8 +84,7 @@ export default {
     }
   },
   created () {
-    // 通过 Event Bus 进行组件间通信，来折叠侧边栏
-    bus.$on('collapse', msg => {
+    this.$bus.on('collapse', msg => {
       this.collapse = msg
     })
   }
