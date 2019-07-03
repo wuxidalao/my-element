@@ -54,11 +54,11 @@ export default {
     }
   },
   methods: {
+    // 全屏
     handleFullScreen () {
       HandleFullScreen()
-      console.log()
     },
-
+    // 折叠菜单
     collapseChage () {
       this.collapse = !this.collapse
       bus.$emit('collapse', this.collapse)
