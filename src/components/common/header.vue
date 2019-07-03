@@ -13,7 +13,8 @@
       <div class="grid-content bg-purple-light headerSetUp">
         <el-dropdown>
           <div type="primary">
-            admin<i class="el-icon-arrow-down el-icon--right"></i>
+            admin
+            <i class="el-icon-arrow-down el-icon--right"></i>
           </div>
           <el-dropdown-menu slot="dropdown">
             <el-dropdown-item>系统首页</el-dropdown-item>
@@ -23,7 +24,9 @@
         </el-dropdown>
       </div>
       <!-- 头像 -->
-      <div class="headPortrait"><img src="../../images/tx.png" /></div>
+      <div class="headPortrait">
+        <img src="../../images/tx.png" />
+      </div>
       <!-- 消息 -->
       <div class="headerBell">
         <div class="headerBellTips"></div>
@@ -42,7 +45,7 @@
 </template>
 
 <script>
-const {HandleFullScreen} = require('../../lib/help.js')
+const { HandleFullScreen } = require('../../lib/help.js')
 
 export default {
   name: 'Header',
@@ -72,70 +75,70 @@ export default {
 </script>
 
 <style scoped>
-.headerContainer{
+.headerContainer {
   display: flex;
   justify-content: space-between;
   height: 60px;
 }
 
-.headerLeft{
+.headerLeft {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
 }
 
-.headerRight{
+.headerRight {
   display: flex;
   flex-direction: row-reverse;
   justify-content: flex-end;
   align-items: center;
 }
 
-.collapse-btn{
+.collapse-btn {
   margin-right: 15px;
   font-size: 30px;
   color: lightblue;
 }
 
-.headerName{
+.headerName {
   color: #fff;
 }
 
-.logo>img{
+.logo > img {
   width: 40px;
   height: 30px;
 }
 
-.headerSetUp{
+.headerSetUp {
   margin-left: 10px;
 }
 
-.headPortrait>img{
+.headPortrait > img {
   width: 40px;
   height: 40px;
   border-radius: 50%;
 }
 
-.headerBell{
+.headerBell {
   color: aliceblue;
   font-size: 24px;
   margin-right: 15px;
   position: relative;
 }
 
-.headerBellTips{
-  display:block;
-	background:#f00;
-	border-radius:50%;
-	width:8px;
-	height:8px;
-	top:0px;
-	right:0px;
-	position:absolute;
+.headerBellTips {
+  display: block;
+  background: #f00;
+  border-radius: 50%;
+  width: 8px;
+  height: 8px;
+  top: 0px;
+  right: 0px;
+  position: absolute;
 }
 
-.headerFullScreen{
+.headerFullScreen {
   color: aliceblue;
   font-size: 24px;
   margin-right: 10px;

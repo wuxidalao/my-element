@@ -1,10 +1,16 @@
 <template>
   <div>
     <el-container direction="vertical">
-      <el-header><vHeader></vHeader></el-header>
+      <el-header>
+        <vHeader></vHeader>
+      </el-header>
       <el-container class="containerBox">
-        <el-aside width="250px"><vAside></vAside></el-aside>
-        <el-main><vMain></vMain></el-main>
+        <el-aside>
+          <vAside></vAside>
+        </el-aside>
+        <el-main>
+          <vMain></vMain>
+        </el-main>
       </el-container>
     </el-container>
   </div>
@@ -16,11 +22,9 @@ import vAside from './aside.vue'
 import vMain from './main.vue'
 
 export default {
-  name:"Home",
-  data(){
-    return{
-      
-    }
+  name: 'Home',
+  data () {
+    return {}
   },
   components: {
     vHeader,
@@ -31,16 +35,15 @@ export default {
 </script>
 
 <style scoped>
-.containerBox{
+.containerBox {
   height: 100%;
-  
 }
-.el-container{
-  height:100%;
+.el-container {
+  height: 100%;
 }
 
 .el-header {
- background: #242f42;
+  background: #242f42;
 }
 
 .el-aside {
@@ -50,5 +53,4 @@ export default {
   background-color: #fff;
   padding: 0;
 }
-
 </style>
