@@ -50,7 +50,7 @@ export default {
   data () {
     return {
       fullscreen: false,
-      collapse: true
+      collapse: false
     }
   },
   methods: {
