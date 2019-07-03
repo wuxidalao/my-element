@@ -9,7 +9,6 @@ export default new Router({
       path: '/',
       redirect: '/home'
     },
-  
     {
       path: '/home',
       component: resolve => require(['../components/common/home.vue'], resolve),
@@ -31,12 +30,12 @@ export default new Router({
           meta: { title: '个人中心' }
         },
         {
-          path: '/qita/chifan',
+          path: '/chifan',
           component: resolve => require(['../components/page/chifan.vue'], resolve),
           meta: { title: '吃饭' }
         },
         {
-          path: '/qita/shuijiao',
+          path: '/shuijiao',
           component: resolve => require(['../components/page/shuijiao.vue'], resolve),
           meta: { title: '睡觉' }
         },

@@ -2,8 +2,9 @@
   <div class="headerContainer">
     <div class="headerLeft">
       <!-- <div class="logo"><img src="../../images/logo.png" /></div> -->
-      <div class="collapse-btn">
-            <i class="el-icon-menu"></i>
+      <!-- 折叠 -->
+      <div class="collapse-btn" @click="collapseChage">
+        <i class="el-icon-menu"></i>
       </div>
       <p class="headerName">管理系统</p>
     </div>
@@ -32,7 +33,7 @@
       </div>
       <!-- 全屏 -->
       <div class="headerFullScreen" @click="handleFullScreen">
-        <el-tooltip class="item" effect="dark" :content="fullscreen?'取消全屏':'全屏'" placement="bottom">
+        <el-tooltip class="item" effect="dark" :content="fullscreen?`取消全屏`:`全屏`" placement="bottom">
           <i class="el-icon-rank"></i>
         </el-tooltip>
       </div>
@@ -41,19 +42,31 @@
 </template>
 
 <script>
-const  {HandleFullScreen} =require('../../lib/help.js')
+const {HandleFullScreen} = require('../../lib/help.js')
+const bus = require('./bus.js')
 
 export default {
-  name:"Header",
-  data(){
+  name: 'Header',
+  data () {
     return {
-      fullscreen: false
+      fullscreen: false,
+      collapse: true
     }
   },
-  methods:{
-    handleFullScreen(){
+  methods: {
+    handleFullScreen () {
       HandleFullScreen()
-      console.log(fullscreen)
+      console.log()
+    },
+
+    collapseChage () {
+      this.collapse = !this.collapse
+      bus.$emit('collapse', this.collapse)
+    }
+  },
+  mounted () {
+    if (document.body.clientWidth < 1500) {
+      this.collapseChage()
     }
   }
 }

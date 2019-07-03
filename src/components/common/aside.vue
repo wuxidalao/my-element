@@ -1,90 +1,95 @@
 <template>
   <div class="asideBar">
-    <el-menu
-      :default-active="onRoutes"
-      class="el-menu-vertical-demo"
-      background-color="#354155"
-      text-color="#c1cbd8"
-      active-text-color="#4aa0f8"
-    >
-      <template v-for="item in items">
-        <template v-if="item.subs">
-          <el-submenu :index="item.index" :key="item.index">
-            <template slot="title">
+      <el-menu :default-active="onRoutes" unique-opened router :collapse="collapse" class="el-menu-vertical-demo" background-color="#354155" text-color="#c1cbd8" active-text-color="#4aa0f8">
+        <template v-for="item in items">
+          <template v-if="item.subs">
+            <el-submenu :index="item.index" :key="item.index">
+              <template slot="title">
+                <i :class="item.icon"></i>
+                <span slot="title">{{item.title}}</span>
+              </template>
+              <template v-for="subItem in item.subs">
+                <el-submenu v-if="subItem.subs" :index="subItem.index" :key="subItem.index">
+                  <template slot="title">{{ subItem.title }}</template>
+                  <el-menu-item v-for="(subsubItem,i) in subItem.subs" :key="i" :index="subsubItem.index">
+                    {{ subsubItem.title }}
+                  </el-menu-item>
+                </el-submenu>
+                <el-menu-item v-else :index="subItem.index" :key="subItem.index">
+                  {{ subItem.title }}
+                </el-menu-item>
+              </template>
+            </el-submenu>
+          </template>
+          <template v-else>
+            <el-menu-item :index="item.index" :key="item.index">
               <i :class="item.icon"></i>
               <span slot="title">{{item.title}}</span>
-            </template>
-            <template v-for="subItem in item.subs">
-              <el-submenu v-if="subItem.subs" :index="subItem.index" :key="subItem.index">
-                <template slot="title">{{ subItem.title }}</template>
-                <el-menu-item
-                  v-for="(threeItem,i) in subItem.subs"
-                  :key="i"
-                  :index="threeItem.index"
-                >{{ threeItem.title }}</el-menu-item>
-              </el-submenu>
-              <el-menu-item v-else :index="subItem.index" :key="subItem.index">{{ subItem.title }}</el-menu-item>
-            </template>
-          </el-submenu>
+            </el-menu-item>
+          </template>
         </template>
-        <template v-else>
-          <el-menu-item :index="item.index" :key="item.index">
-            <i :class="item.icon"></i>
-            <span slot="title">{{item.title}}</span>
-          </el-menu-item>
-        </template>
-      </template>
-    </el-menu>
+      </el-menu>
   </div>
 </template>
 
 <script>
-import bus from "../common/bus";
+import bus from '../common/bus'
 
 export default {
-  name: "Aside",
-  data() {
+  name: 'Aside',
+  data () {
     return {
+      collapse: false,
       items: [
         {
-          icon: "el-icon-location",
-          index: "1",
-          title: "首页",
+          icon: 'el-icon-location',
+          index: 'home',
+          title: '首页',
           subs: [
             {
-              index: "1-1",
-              title: "消息"
+              index: 'tips',
+              title: '消息'
             },
             {
-              index: "1-2",
-              title: "个人中心"
+              index: 'center',
+              title: '个人中心'
             },
             {
-              index: "1-3",
-              title: "其他",
+              index: '3',
+              title: '其他',
               subs: [
                 {
-                  index: "1-3-1",
-                  title: "吃饭"
+                  index: 'chifan',
+                  title: '吃饭'
                 },
                 {
-                  index: "1-3-2",
-                  title: "睡觉"
+                  index: 'shuijiao',
+                  title: '睡觉'
                 }
               ]
             }
           ]
         },
         {
-          icon: "el-icon-setting",
-          index: "2",
-          title: "设置"
+          icon: 'el-icon-setting',
+          index: 'shezhi',
+          title: '设置'
         }
       ]
-    };
+    }
   },
-  methods: {}
-};
+  computed: {
+    onRoutes () {
+      return this.$route.path.replace('/', '')
+    }
+  },
+  created () {
+    // 通过 Event Bus 进行组件间通信，来折叠侧边栏
+    bus.$on('collapse', msg => {
+      this.collapse = msg
+    })
+  }
+}
 </script>
 
 <style scoped>
@@ -98,5 +103,10 @@ export default {
 
 .asideBar::-webkit-scrollbar {
   display: none;
+}
+
+.el-menu-vertical-demo:not(.el-menu--collapse) {
+  width: 250px;
+  min-height: 400px;
 }
 </style>

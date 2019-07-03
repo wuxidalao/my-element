@@ -5,14 +5,11 @@
       <el-tag closable>默认标签</el-tag>
       <el-tag closable>默认标签</el-tag>
     </div>
-
     <!-- 面包屑 -->
-    <vBreadcrumb></vBreadcrumb>  
-
+    <vBreadcrumb></vBreadcrumb>
     <div class="mainContainer">
       <router-view></router-view>
     </div>
-    
   </div>
 </template>
 
@@ -20,13 +17,13 @@
 import vBreadcrumb from '../page/breadcrumb.vue'
 
 export default {
-  name:"Main",
-  data(){
+  name: 'Main',
+  data () {
     return {
-      
+
     }
   },
-  components:{
+  components: {
     vBreadcrumb
   }
 }
@@ -45,7 +42,5 @@ export default {
   border-radius: 5px;
   height: 100%;
 }
-
-
 
 </style>
