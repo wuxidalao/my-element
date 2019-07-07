@@ -17,9 +17,9 @@
 </template>
 
 <script>
-import vHeader from './header.vue'
-import vAside from './aside.vue'
-import vMain from './main.vue'
+import vHeader from '../../components/layou/header.vue'
+import vAside from '../../components/layou/aside.vue'
+import vMain from '../../components/layou/main.vue'
 
 export default {
   name: 'Home',

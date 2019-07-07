@@ -11,7 +11,7 @@ export default new Router({
     },
     {
       path: '/home',
-      component: resolve => require(['../views/home.vue'], resolve),
+      component: resolve => require(['../views/home/home.vue'], resolve),
       meta: { title: '首页' },
       children: [
         {
@@ -48,7 +48,7 @@ export default new Router({
     },
     {
       path: '/login',
-      component: resolve => require(['../views/login.vue'], resolve)
+      component: resolve => require(['../views/login/login.vue'], resolve)
     }
   ]
 })

@@ -14,7 +14,7 @@
 </template>
 
 <script>
-import vBreadcrumb from '../components/page/breadcrumb.vue'
+import vBreadcrumb from '../page/breadcrumb.vue'
 
 export default {
   name: 'Main',

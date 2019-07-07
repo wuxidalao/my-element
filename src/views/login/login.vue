@@ -8,7 +8,7 @@
       label-position="left"
       label-width="0px"
       class="demo-ruleForm login-page">
-      <img class="logo" src="../images/logo.png" alt="">
+      <img class="logo" src="../../images/logo.png" alt="">
       <h3 class="title">信息系统</h3>
       <el-form-item prop="username">
         <el-input type="text" v-model="ruleForm2.username" auto-complete="off" prefix-icon="el-icon-user" placeholder="用户名"></el-input>
@@ -99,7 +99,7 @@ export default {
   width: 100%;
   height: 100%;
   /* background-color: rgb(84, 92, 100); */
-  background: url(../images/loginBj.jpeg) no-repeat center center;
+  background: url(../../images/loginBj.jpeg) no-repeat center center;
   background-size:100% 100%;
   position: relative;
 }
