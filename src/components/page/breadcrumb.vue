@@ -11,7 +11,7 @@
 </template>
 
 <script>
-const bus = require('../common/bus.js')
+// const bus = require('../common/bus.js')
 
 export default {
   data () {

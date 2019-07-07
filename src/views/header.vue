@@ -25,7 +25,7 @@
       </div>
       <!-- 头像 -->
       <div class="headPortrait">
-        <img src="../../images/tx.png" />
+        <img src="../images/tx.png" />
       </div>
       <!-- 消息 -->
       <div class="headerBell">
@@ -45,7 +45,7 @@
 </template>
 
 <script>
-const { HandleFullScreen } = require('../../lib/help.js')
+const { HandleFullScreen } = require('../lib/help.js')
 
 export default {
   name: 'Header',
